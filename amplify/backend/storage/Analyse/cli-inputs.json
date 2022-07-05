@@ -1,0 +1,10 @@
+{
+  "resourceName": "Analyse",
+  "tableName": "Analyse",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
