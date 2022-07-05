@@ -1,1 +1,8 @@
-{}
+{
+  "storage": {
+    "Analyse": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
