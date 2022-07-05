@@ -37,5 +37,18 @@
       "StackId": "arn:aws:cloudformation:eu-west-1:684651812586:stack/amplify-appdevopsiim-test-103510/61f3b950-fc3d-11ec-b03c-026a6b133d2d",
       "AmplifyAppId": "dx0lzyakv77xj"
     }
+  },
+  "valentin": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-appdevopsiim-valentin-114146-authRole",
+      "UnauthRoleArn": "arn:aws:iam::684651812586:role/amplify-appdevopsiim-valentin-114146-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::684651812586:role/amplify-appdevopsiim-valentin-114146-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-appdevopsiim-valentin-114146-deployment",
+      "UnauthRoleName": "amplify-appdevopsiim-valentin-114146-unauthRole",
+      "StackName": "amplify-appdevopsiim-valentin-114146",
+      "StackId": "arn:aws:cloudformation:eu-west-1:684651812586:stack/amplify-appdevopsiim-valentin-114146/b0004240-fc46-11ec-8a07-062547173345",
+      "AmplifyAppId": "dx0lzyakv77xj"
+    }
   }
 }
