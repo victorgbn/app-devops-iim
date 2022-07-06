@@ -37,6 +37,24 @@
     "resourceName": "appdevopsiim",
     "sharedId": "70da442c",
     "serviceName": "Cognito",
-    "useDefault": "manual"
+    "useDefault": "default",
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "useEnabledMfas": true,
+    "dependsOn": [],
+    "hostedUI": false,
+    "userPoolGroupList": [],
+    "authProviders": []
   }
 }
