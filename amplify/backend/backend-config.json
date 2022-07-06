@@ -3,6 +3,10 @@
     "Analyse": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "Users": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   },
   "function": {
@@ -21,6 +25,11 @@
           ]
         }
       ]
+    },
+    "createUser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "auth": {
