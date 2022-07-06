@@ -1,15 +1,17 @@
 <template>
   <v-app>
-    <v-main>
-      <router-view/>
-    </v-main>
+    <amplify-authenticator>
+      <v-main>
+        <router-view></router-view>
+        <amplify-sign-out></amplify-sign-out>
+      </v-main>
+    </amplify-authenticator>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
