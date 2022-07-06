@@ -2,6 +2,7 @@
   <v-app>
     <amplify-authenticator>
       <v-main>
+        <router-view></router-view>
         <amplify-sign-out></amplify-sign-out>
       </v-main>
     </amplify-authenticator>
