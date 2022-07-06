@@ -27,6 +27,22 @@
     "storageAnalyseStreamArn": {
       "Type": "String",
       "Default": "storageAnalyseStreamArn"
+    },
+    "functionappdevopsiimutilsArn": {
+      "Type": "String",
+      "Default": "functionappdevopsiimutilsArn"
+    },
+    "storageUsersName": {
+      "Type": "String",
+      "Default": "storageUsersName"
+    },
+    "storageUsersArn": {
+      "Type": "String",
+      "Default": "storageUsersArn"
+    },
+    "storageUsersStreamArn": {
+      "Type": "String",
+      "Default": "storageUsersStreamArn"
     }
   },
   "Conditions": {
@@ -90,6 +106,15 @@
             },
             "STORAGE_ANALYSE_STREAMARN": {
               "Ref": "storageAnalyseStreamArn"
+            },
+            "STORAGE_USERS_NAME": {
+              "Ref": "storageUsersName"
+            },
+            "STORAGE_USERS_ARN": {
+              "Ref": "storageUsersArn"
+            },
+            "STORAGE_USERS_STREAMARN": {
+              "Ref": "storageUsersStreamArn"
             }
           }
         },
@@ -100,7 +125,11 @@
           ]
         },
         "Runtime": "python3.8",
-        "Layers": [],
+        "Layers": [
+          {
+            "Ref": "functionappdevopsiimutilsArn"
+          }
+        ],
         "Timeout": 25
       }
     },
@@ -218,6 +247,29 @@
                     [
                       {
                         "Ref": "storageAnalyseArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageUsersArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageUsersArn"
                       },
                       "index/*"
                     ]

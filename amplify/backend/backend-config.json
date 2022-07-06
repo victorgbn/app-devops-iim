@@ -23,6 +23,22 @@
             "Arn",
             "StreamArn"
           ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "Users",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "appdevopsiimutils",
+          "attributes": [
+            "Arn"
+          ]
         }
       ]
     },
@@ -41,6 +57,11 @@
           ]
         }
       ]
+    },
+    "appdevopsiimutils": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
     }
   },
   "auth": {
