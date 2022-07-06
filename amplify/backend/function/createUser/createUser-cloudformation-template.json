@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"9.1.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"9.1.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -15,22 +15,6 @@
     },
     "s3Key": {
       "Type": "String"
-    },
-    "storageAnalyseName": {
-      "Type": "String",
-      "Default": "storageAnalyseName"
-    },
-    "storageAnalyseArn": {
-      "Type": "String",
-      "Default": "storageAnalyseArn"
-    },
-    "storageAnalyseStreamArn": {
-      "Type": "String",
-      "Default": "storageAnalyseStreamArn"
-    },
-    "functionappdevopsiimutilsArn": {
-      "Type": "String",
-      "Default": "functionappdevopsiimutilsArn"
     },
     "storageUsersName": {
       "Type": "String",
@@ -75,12 +59,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "createAnalyses",
+            "createUser",
             {
               "Fn::Join": [
                 "",
                 [
-                  "createAnalyses",
+                  "createUser",
                   "-",
                   {
                     "Ref": "env"
@@ -97,15 +81,6 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
-            },
-            "STORAGE_ANALYSE_NAME": {
-              "Ref": "storageAnalyseName"
-            },
-            "STORAGE_ANALYSE_ARN": {
-              "Ref": "storageAnalyseArn"
-            },
-            "STORAGE_ANALYSE_STREAMARN": {
-              "Ref": "storageAnalyseStreamArn"
             },
             "STORAGE_USERS_NAME": {
               "Ref": "storageUsersName"
@@ -125,11 +100,7 @@
           ]
         },
         "Runtime": "python3.8",
-        "Layers": [
-          {
-            "Ref": "functionappdevopsiimutilsArn"
-          }
-        ],
+        "Layers": [],
         "Timeout": 25
       }
     },
@@ -139,12 +110,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "appdevopsiimLambdaRoledb1f9dd3",
+            "appdevopsiimLambdaRolefbfbac31",
             {
               "Fn::Join": [
                 "",
                 [
-                  "appdevopsiimLambdaRoledb1f9dd3",
+                  "appdevopsiimLambdaRolefbfbac31",
                   "-",
                   {
                     "Ref": "env"
@@ -236,29 +207,6 @@
                 "dynamodb:Put*",
                 "dynamodb:Create*",
                 "dynamodb:BatchWriteItem"
-              ],
-              "Resource": [
-                {
-                  "Ref": "storageAnalyseArn"
-                },
-                {
-                  "Fn::Join": [
-                    "/",
-                    [
-                      {
-                        "Ref": "storageAnalyseArn"
-                      },
-                      "index/*"
-                    ]
-                  ]
-                }
-              ]
-            },
-            {
-              "Effect": "Allow",
-              "Action": [
-                "dynamodb:Update*",
-                "dynamodb:RestoreTable*"
               ],
               "Resource": [
                 {

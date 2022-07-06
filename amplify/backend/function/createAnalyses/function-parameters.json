@@ -3,8 +3,19 @@
     "storage": {
       "Analyse": [
         "create"
+      ],
+      "Users": [
+        "update"
       ]
     }
   },
-  "lambdaLayers": []
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "appdevopsiimutils",
+      "env": "gbnvictor",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ]
 }
