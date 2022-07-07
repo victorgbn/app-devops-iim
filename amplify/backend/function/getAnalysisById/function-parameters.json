@@ -13,8 +13,8 @@
     {
       "type": "ProjectLayer",
       "resourceName": "appdevopsiimutils",
-      "version": "Always choose latest version",
-      "isLatestVersionSelected": true,
+      "version": 1,
+      "isLatestVersionSelected": false,
       "env": "valentin"
     }
   ]

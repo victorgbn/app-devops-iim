@@ -20,7 +20,7 @@
     }
   },
   "Resources": {
-    "LambdaLayerVersion48d90364": {
+    "LambdaLayerVersion95717780": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": {
@@ -51,19 +51,19 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivate48d90364": {
+    "LambdaLayerPermissionPrivate95717780": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
         "LayerVersionArn": {
-          "Ref": "LambdaLayerVersion48d90364"
+          "Ref": "LambdaLayerVersion95717780"
         },
         "Principal": {
           "Ref": "AWS::AccountId"
         }
       }
     },
-    "LambdaLayerVersion750125cf": {
+    "LambdaLayerVersion1c599510": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": [
@@ -73,9 +73,9 @@
           "S3Bucket": {
             "Ref": "deploymentBucketName"
           },
-          "S3Key": "amplify-builds/appdevopsiimutils-LambdaLayerVersion750125cf-build.zip"
+          "S3Key": "amplify-builds/appdevopsiimutils-LambdaLayerVersion1c599510-build.zip"
         },
-        "Description": "Updated layer version 2022-07-06T12:04:34.017Z",
+        "Description": "Updated layer version 2022-07-07T10:13:30.631Z",
         "LayerName": {
           "Fn::Sub": [
             "appdevopsiimutils-${env}",
@@ -90,11 +90,48 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivate750125cf": {
+    "LambdaLayerPermissionPrivate1c599510": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:eu-west-1:684651812586:layer:appdevopsiimutils-gbnvictor:1",
+        "LayerVersionArn": "arn:aws:lambda:eu-west-1:684651812586:layer:appdevopsiimutils-valentin:2",
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    },
+    "LambdaLayerVersion4d4e502c": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": [
+          "python3.8"
+        ],
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": "amplify-builds/appdevopsiimutils-LambdaLayerVersion4d4e502c-build.zip"
+        },
+        "Description": "Updated layer version 2022-07-06T14:44:07.244Z",
+        "LayerName": {
+          "Fn::Sub": [
+            "appdevopsiimutils-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionPrivate4d4e502c": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:eu-west-1:684651812586:layer:appdevopsiimutils-valentin:1",
         "Principal": {
           "Ref": "AWS::AccountId"
         }
@@ -104,7 +141,7 @@
   "Outputs": {
     "Arn": {
       "Value": {
-        "Ref": "LambdaLayerVersion48d90364"
+        "Ref": "LambdaLayerVersion95717780"
       }
     }
   }
