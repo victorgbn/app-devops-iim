@@ -8,9 +8,10 @@
         <thead>
           <tr>
             <th class="text-left">ID</th>
-            <th class="text-left">title</th>
-            <th class="text-left">description</th>
-            <th class="text-left">transcript</th>
+            <th class="text-left">Titre</th>
+            <th class="text-left">Description</th>
+            <th class="text-left">Statut</th>
+            <th class="text-left">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -18,7 +19,12 @@
             <td>{{ item.id }}</td>
             <td>{{ item.title }}</td>
             <td>{{ item.description }}</td>
-            <td>{{ item.transcript }}</td>
+            <td style="color:white;" :style="item.description || item.title ? 'background:darkgreen' : 'background:darkorange'">{{ item.description || item.title ? 'Disponible' : 'En création' }}</td>
+            <td style="cursor:pointer;">
+              <a :href="'formAnalyse/:'+item.id">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+              </a>
+            </td>
           </tr>
         </tbody>
       </template>
@@ -46,6 +52,7 @@ export default {
     },
     async getAnalysis() {
       try {
+
         const { analyseObjects } = await API.get(
           "analyses",
           "/getUserAnalysis"
@@ -55,7 +62,7 @@ export default {
       } catch (error) {
         console.error(error);
       }
-    },
+    }
   },
   mounted() {
     this.getAnalysis();
