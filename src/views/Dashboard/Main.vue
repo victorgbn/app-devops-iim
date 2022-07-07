@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <h1>Titre</h1>
-    <v-btn @click="createAnalyses"> Action </v-btn>
+    <h1>Hello !</h1>
+    <v-btn @click="createAnalyses">Create Analyse</v-btn>
 
     <v-simple-table>
       <template v-slot:default>
@@ -37,13 +37,13 @@ export default {
   methods: {
     async createAnalyses() {
       try {
-        console.log("action");
-        await API.post("analyses", "/createAnalyses");
+        console.log("Create Analyse started");
+        const response = await API.post("analyses", "/createAnalyses");
+        this.$router.push({ path: `/formAnalyse/:${response.analyseId}` });
       } catch (e) {
         console.log(e);
       }
     },
-
     async getAnalysis() {
       try {
         const { analyseObjects } = await API.get(

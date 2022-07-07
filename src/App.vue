@@ -6,6 +6,7 @@
         <amplify-sign-out></amplify-sign-out>
       </v-main>
     </amplify-authenticator>
+    <p>Dev by Théo Popelin, Valentin Waché De Corbie, Victor Cabot et Victor Gaubin.</p>
   </v-app>
 </template>
 
