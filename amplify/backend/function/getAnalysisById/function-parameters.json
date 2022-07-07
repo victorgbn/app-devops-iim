@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "storage": {
+      "Analyse": [
+        "read"
+      ],
+      "Users": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ExternalLayer",
+      "arn": {
+        "Fn::Sub": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:appdevopsiimutils-valentin:1"
+      }
+    }
+  ]
+}

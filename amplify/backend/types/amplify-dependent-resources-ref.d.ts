@@ -15,6 +15,10 @@ export type AmplifyDependentResourcesAttributes = {
             "PartitionKeyName": "string",
             "PartitionKeyType": "string",
             "Region": "string"
+        },
+        "bucketimage": {
+            "BucketName": "string",
+            "Region": "string"
         }
     },
     "function": {
@@ -34,6 +38,18 @@ export type AmplifyDependentResourcesAttributes = {
             "Arn": "string"
         },
         "getUserAnalysis": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "getAnalysisById": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        },
+        "updateAnalyse": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
