@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Dashboard from '../views/Dashboard/Main.vue'
+import formAnalyse from '../views/Dashboard/formAnalyse.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,11 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard
   },
+  {
+    path: '/formAnalyse/:id',
+    name: 'form',
+    component: formAnalyse
+  }
 ]
 
 const router = new VueRouter({

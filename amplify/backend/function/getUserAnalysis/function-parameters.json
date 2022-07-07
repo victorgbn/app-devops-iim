@@ -2,10 +2,10 @@
   "permissions": {
     "storage": {
       "Analyse": [
-        "create"
+        "read"
       ],
       "Users": [
-        "update"
+        "read"
       ]
     }
   },

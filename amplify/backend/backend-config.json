@@ -62,6 +62,38 @@
       "providerPlugin": "awscloudformation",
       "service": "LambdaLayer",
       "build": true
+    },
+    "getUserAnalysis": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "appdevopsiimutils",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "Analyse",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "Users",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -98,6 +130,14 @@
         {
           "category": "function",
           "resourceName": "createAnalyses",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "getUserAnalysis",
           "attributes": [
             "Name",
             "Arn"
