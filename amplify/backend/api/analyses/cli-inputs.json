@@ -10,16 +10,6 @@
           "create"
         ]
       }
-    },
-    "/updateAnalyse": {
-      "name": "/updateAnalyse",
-      "lambdaFunction": "updateAnalyse",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "create"
-        ]
-      }
     }
   }
 }

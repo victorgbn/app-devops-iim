@@ -32,12 +32,6 @@ export type AmplifyDependentResourcesAttributes = {
         },
         "appdevopsiimutils": {
             "Arn": "string"
-        },
-        "updateAnalyse": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
         }
     },
     "auth": {
