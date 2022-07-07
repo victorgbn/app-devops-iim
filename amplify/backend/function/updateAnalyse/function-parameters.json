@@ -2,9 +2,6 @@
   "permissions": {
     "storage": {
       "Analyse": [
-        "create"
-      ],
-      "Users": [
         "update"
       ]
     }
@@ -13,9 +10,9 @@
     {
       "type": "ProjectLayer",
       "resourceName": "appdevopsiimutils",
+      "env": "dev",
       "version": "Always choose latest version",
-      "isLatestVersionSelected": true,
-      "env": "dev"
+      "isLatestVersionSelected": true
     }
   ]
 }

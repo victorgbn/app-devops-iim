@@ -31,18 +31,6 @@
     "functionappdevopsiimutilsArn": {
       "Type": "String",
       "Default": "functionappdevopsiimutilsArn"
-    },
-    "storageUsersName": {
-      "Type": "String",
-      "Default": "storageUsersName"
-    },
-    "storageUsersArn": {
-      "Type": "String",
-      "Default": "storageUsersArn"
-    },
-    "storageUsersStreamArn": {
-      "Type": "String",
-      "Default": "storageUsersStreamArn"
     }
   },
   "Conditions": {
@@ -75,12 +63,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "createAnalyses",
+            "updateAnalyse",
             {
               "Fn::Join": [
                 "",
                 [
-                  "createAnalyses",
+                  "updateAnalyse",
                   "-",
                   {
                     "Ref": "env"
@@ -106,15 +94,6 @@
             },
             "STORAGE_ANALYSE_STREAMARN": {
               "Ref": "storageAnalyseStreamArn"
-            },
-            "STORAGE_USERS_NAME": {
-              "Ref": "storageUsersName"
-            },
-            "STORAGE_USERS_ARN": {
-              "Ref": "storageUsersArn"
-            },
-            "STORAGE_USERS_STREAMARN": {
-              "Ref": "storageUsersStreamArn"
             }
           }
         },
@@ -139,12 +118,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "appdevopsiimLambdaRoledb1f9dd3",
+            "appdevopsiimLambdaRolebea67b01",
             {
               "Fn::Join": [
                 "",
                 [
-                  "appdevopsiimLambdaRoledb1f9dd3",
+                  "appdevopsiimLambdaRolebea67b01",
                   "-",
                   {
                     "Ref": "env"
@@ -233,9 +212,8 @@
             {
               "Effect": "Allow",
               "Action": [
-                "dynamodb:Put*",
-                "dynamodb:Create*",
-                "dynamodb:BatchWriteItem"
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*"
               ],
               "Resource": [
                 {
@@ -247,29 +225,6 @@
                     [
                       {
                         "Ref": "storageAnalyseArn"
-                      },
-                      "index/*"
-                    ]
-                  ]
-                }
-              ]
-            },
-            {
-              "Effect": "Allow",
-              "Action": [
-                "dynamodb:Update*",
-                "dynamodb:RestoreTable*"
-              ],
-              "Resource": [
-                {
-                  "Ref": "storageUsersArn"
-                },
-                {
-                  "Fn::Join": [
-                    "/",
-                    [
-                      {
-                        "Ref": "storageUsersArn"
                       },
                       "index/*"
                     ]
