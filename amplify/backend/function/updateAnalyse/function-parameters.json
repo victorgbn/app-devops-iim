@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "storage": {
+      "Analyse": [
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "appdevopsiimutils",
+      "env": "dev",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ]
+}
