@@ -11,14 +11,20 @@
             <th class="text-left">title</th>
             <th class="text-left">description</th>
             <th class="text-left">transcript</th>
+            <th class="text-left">etat</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in usersAnalysis" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.title }}</td>
-            <td>{{ item.description }}</td>
-            <td>{{ item.transcript }}</td>
+              <td>
+                <router-link :to="'/formAnalyse/:id'+item.id">
+                  {{ item.id }}
+                </router-link>
+              </td>
+              <td>{{ item.title ?? 'N/A' }}</td>
+              <td>{{ item.description ?? 'N/A' }}</td>
+              <td>{{ item.transcript ?? 'N/A' }}</td>
+              <td style="color:white;" :style="!item.title || !item.description ? 'background:darkred;' : 'background:darkgreen'">{{ !item.title || !item.description ? 'Non paramétré' : 'Disponible' }}</td>
           </tr>
         </tbody>
       </template>
