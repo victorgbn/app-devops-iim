@@ -31,7 +31,7 @@ def handler(event, context):
 
         analyse_id = create_analyse(table, user_id)
         update_user(user_id, table_user, analyse_id)
-
+        response['body'] = json.dumps({'analyseId': analyse_id})
         response['statusCode'] = 200
     except (Exception, ClientError) as error:
         print(error)
