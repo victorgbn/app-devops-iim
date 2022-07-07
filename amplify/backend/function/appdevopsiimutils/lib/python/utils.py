@@ -1,8 +1,10 @@
-import re
 import decimal
-from math import ceil
 import json
+import re
+from math import ceil
+
 import boto3
+
 
 def get_user_id (event):
     user_id = None
@@ -17,4 +19,3 @@ def get_user_id (event):
         raise ValueError("Input Error : user_id")
 
     return user_id
-

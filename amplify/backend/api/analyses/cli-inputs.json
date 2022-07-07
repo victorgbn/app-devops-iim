@@ -20,6 +20,16 @@
           "read"
         ]
       }
+    },
+    "/getAnalysisById": {
+      "name": "/getAnalysisById",
+      "lambdaFunction": "getAnalysisById",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }
