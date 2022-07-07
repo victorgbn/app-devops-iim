@@ -15,6 +15,10 @@ export type AmplifyDependentResourcesAttributes = {
             "PartitionKeyName": "string",
             "PartitionKeyType": "string",
             "Region": "string"
+        },
+        "bucketimage": {
+            "BucketName": "string",
+            "Region": "string"
         }
     },
     "function": {
