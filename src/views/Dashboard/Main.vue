@@ -29,15 +29,17 @@
         </tbody>
       </template>
     </v-simple-table>
+    <v-img :src='urlImage' />
   </v-container>
 </template>
 <script>
-import { API } from "aws-amplify";
+import { API, Storage } from "aws-amplify";
 
 export default {
   data() {
     return {
       usersAnalysis: null,
+      urlImage: ''
     };
   },
   methods: {
@@ -64,8 +66,9 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
     this.getAnalysis();
+    this.urlImage = await Storage.get('image1.jpeg')
   },
 };
 </script>
