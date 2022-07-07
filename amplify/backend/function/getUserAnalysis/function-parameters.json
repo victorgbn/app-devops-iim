@@ -2,10 +2,10 @@
   "permissions": {
     "storage": {
       "Analyse": [
-        "create"
+        "read"
       ],
       "Users": [
-        "update"
+        "read"
       ]
     }
   },
@@ -13,9 +13,9 @@
     {
       "type": "ProjectLayer",
       "resourceName": "appdevopsiimutils",
+      "env": "valentin",
       "version": "Always choose latest version",
-      "isLatestVersionSelected": true,
-      "env": "valentin"
+      "isLatestVersionSelected": true
     }
   ]
 }
