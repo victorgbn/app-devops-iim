@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "storage": {
+      "Analyse": [
+        "create"
+      ],
+      "Users": [
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "appdevopsiimutils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "gbnvictor"
+    }
+  ]
+}
