@@ -11,11 +11,10 @@
   },
   "lambdaLayers": [
     {
-      "type": "ProjectLayer",
-      "resourceName": "appdevopsiimutils",
-      "version": 1,
-      "isLatestVersionSelected": false,
-      "env": "valentin"
+      "type": "ExternalLayer",
+      "arn": {
+        "Fn::Sub": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:appdevopsiimutils-valentin:1"
+      }
     }
   ]
 }
